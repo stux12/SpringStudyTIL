@@ -2,7 +2,9 @@ package com.til.springstudy.discount;
 
 import com.til.springstudy.member.Grade;
 import com.til.springstudy.member.Member;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RateDiscountPolicy implements DisCountPolicy{
 
     @Override

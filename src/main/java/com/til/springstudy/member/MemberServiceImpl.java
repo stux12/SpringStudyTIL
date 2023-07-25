@@ -1,5 +1,7 @@
 package com.til.springstudy.member;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class MemberServiceImpl implements MemberService{
 
     private final MemberRepository memberRepository;

@@ -6,12 +6,14 @@ import com.til.springstudy.member.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-public class OrderServiceImpl implements OrderService{
+@Component
+public class OrderServiceImpl2 implements OrderService{
 
     private final MemberRepository memberRepository;
     private final DisCountPolicy disCountPolicy;
 
-    public OrderServiceImpl(MemberRepository memberRepository, DisCountPolicy disCountPolicy) {
+    @Autowired
+    public OrderServiceImpl2(MemberRepository memberRepository, DisCountPolicy disCountPolicy) {
         this.memberRepository = memberRepository;
         this.disCountPolicy = disCountPolicy;
     }
