@@ -16,21 +16,26 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class AppConfig {
 
-    /*
-    * Spring 컨테이너에 Bean 생성 */
+    //@Bean memberService -> new MemoryMemberRepository()
+    //@Bean orderService -> new MemoryMemberRepository()
+
+    /** Spring 컨테이너에 Bean 생성 */
     @Bean
     public MemberService memberService(){
-        return new MemberServiceImpl(getMemoryMemberRepository());
+        System.out.println("call AppConfig.memberService");
+        return new MemberServiceImpl(memberRepository());
     }
 
     @Bean
-    public MemberRepository getMemoryMemberRepository() {
+    public MemberRepository memberRepository() {
+        System.out.println("call AppConfig.memberRepository");
         return new MemoryMemberRepository();
     }
 
     @Bean
     public OrderService orderService() {
-        return new OrderServiceImpl(getMemoryMemberRepository(), getFixDiscountPolicy());
+        System.out.println("call AppConfig.orderService");
+        return new OrderServiceImpl(memberRepository(), getFixDiscountPolicy());
     }
 
     @Bean

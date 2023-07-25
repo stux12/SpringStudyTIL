@@ -28,7 +28,7 @@ public class ApplicationContextExtendFindTest {
     @Test
     @DisplayName("부모 타입으로 조회시, 자식이 둘 이상 있으면, 빈 이름을 지정하면 된다")
     void findBeanByParentTypeBeanName(){
-        DisCountPolicy rateDisCountPolicy = applicationContext.getBean("rateDiscountPolicy",DisCountPolicy.class);
+        DisCountPolicy rateDisCountPolicy = applicationContext.getBean("rateDisCountPolicy",DisCountPolicy.class);
         assertThat(rateDisCountPolicy).isInstanceOf(RateDiscountPolicy.class);
     }
 
@@ -61,7 +61,7 @@ public class ApplicationContextExtendFindTest {
     @Configuration
     static class TestConfig{
         @Bean
-        public DisCountPolicy reaTestCountPolicy() {
+        public DisCountPolicy rateDisCountPolicy() {
             return new RateDiscountPolicy();
         }
         @Bean

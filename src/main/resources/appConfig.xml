@@ -6,10 +6,13 @@
     <bean id="memberService" class="com.til.springstudy.member.MemberServiceImpl">
         <constructor-arg name="memberRepository" ref="memberRepository"/>
     </bean>
+
     <bean id="memberRepository" class="com.til.springstudy.member.MemoryMemberRepository"/>
+
     <bean id="orderService" class="com.til.springstudy.order.OrderServiceImpl">
         <constructor-arg name="memberRepository" ref="memberRepository"/>
         <constructor-arg name="disCountPolicy" ref="discountPolicy"/>
     </bean>
+
     <bean id="discountPolicy" class="com.til.springstudy.discount.RateDiscountPolicy"/>
  </beans>
