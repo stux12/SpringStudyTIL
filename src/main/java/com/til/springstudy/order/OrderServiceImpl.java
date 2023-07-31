@@ -3,8 +3,6 @@ package com.til.springstudy.order;
 import com.til.springstudy.discount.DisCountPolicy;
 import com.til.springstudy.member.Member;
 import com.til.springstudy.member.MemberRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 public class OrderServiceImpl implements OrderService{
 
